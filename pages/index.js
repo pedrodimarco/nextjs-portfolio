@@ -18,6 +18,49 @@ export async function getStaticProps() {
   };
 }
 
+const techStack = [
+  {
+    tech: "React",
+    img: "/icons/react.png",
+    id: 1,
+  },
+  {
+    tech: "NextJs",
+    img: "/icons/nextjs.png",
+    id: 2,
+  },
+  {
+    tech: "Javascript",
+    img: "/icons/js.png",
+    id: 3,
+  },
+  {
+    tech: "Typescript",
+    img: "/icons/typescript.png",
+    id: 4,
+  },
+  {
+    tech: "Node.js",
+    img: "/icons/node-js.png",
+    id: 5,
+  },
+  {
+    tech: "Express.js",
+    img: "/icons/express.png",
+    id: 6,
+  },
+  {
+    tech: "MongoDB",
+    img: "/icons/mongodb.png",
+    id: 7,
+  },
+  {
+    tech: "PostgreSQL",
+    img: "/icons/postgre.png",
+    id: 8,
+  },
+];
+
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
@@ -30,38 +73,17 @@ export default function Home({ allPostsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Tech stack</h2>
         <ul className={homeStyles.techStackList}>
-          <li className={utilStyles.listItem}>
-            <Image src="/icons/react.png" width={100} height={100} />
-            <p>React</p>
-          </li>
-          <li className={utilStyles.listItem}>
-            <Image src="/icons/nextjs.png" width={100} height={100} />
-            <p>NextJs</p>
-          </li>
-          <li className={utilStyles.listItem}>
-            <Image src="/icons/js.png" width={100} height={100} />
-            <p>JavaScript</p>
-          </li>
-          <li className={utilStyles.listItem}>
-            <Image src="/icons/typescript.png" width={100} height={100} />
-            <p>TypeScript</p>
-          </li>
-          <li className={utilStyles.listItem}>
-            <Image src="/icons/node-js.png" width={100} height={100} />
-            <p>NodeJs</p>
-          </li>
-          <li className={utilStyles.listItem}>
-            <Image src="/icons/express.png" width={100} height={100} />
-            <p>Express</p>
-          </li>
-          <li className={utilStyles.listItem}>
-            <Image src="/icons/mongodb.png" width={100} height={100} />
-            <p>MongoDB</p>
-          </li>
-          <li className={utilStyles.listItem}>
-            <Image src="/icons/postgre.png" width={100} height={100} />
-            <p>PostgreSQL</p>
-          </li>
+          {techStack.map((element) => (
+            <li className={utilStyles.listItem} key={element.id}>
+              <Image
+                src={element.img}
+                width={100}
+                height={100}
+                alt={element.name}
+              />
+              <p>{element.name}</p>
+            </li>
+          ))}
         </ul>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
