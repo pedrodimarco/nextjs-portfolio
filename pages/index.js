@@ -74,7 +74,10 @@ export default function Home({ allPostsData }) {
         <h2 className={utilStyles.headingLg}>Tech stack</h2>
         <ul className={homeStyles.techStackList}>
           {techStack.map((element) => (
-            <li className={utilStyles.listItem} key={element.id}>
+            <li
+              className={`${utilStyles.listItem} ${utilStyles.listItemStack}`}
+              key={element.id}
+            >
               <Image
                 src={element.img}
                 width={100}

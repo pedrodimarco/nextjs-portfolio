@@ -46,9 +46,12 @@
 
 .listItem {
   margin: 0 0 1.25rem;
+}
+
+.listItemStack {
   transition: all 0.2s;
 }
-.listItem:hover {
+.listItemStack:hover {
   transform: scale(1.2);
 }
 
