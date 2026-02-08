@@ -1,10 +1,12 @@
 import '../styles/globals.css';
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
     <Component {...pageProps} />
+    <SpeedInsights />
     <Analytics />
     </>
   )
