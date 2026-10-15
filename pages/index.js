@@ -1,119 +1,132 @@
-import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
-import homeStyles from "../styles/Home.module.css";
-import Link from "next/link";
-import Date from "../components/date";
-import { getSortedPostsData } from "../lib/posts";
-import Contact from "../components/contact";
 import Image from "next/image";
+import Layout from "../components/layout";
+import Contact from "../components/contact";
+import styles from "../styles/Home.module.css";
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
-
-const techStack = [
+const projects = [
   {
-    tech: "React",
-    img: "/icons/react.png",
-    id: 1,
+    name: "Rancho Forestal",
+    description: "Website for an agroforestry services company",
+    href: "https://ranchoforestal.uy",
   },
   {
-    tech: "NextJs",
-    img: "/icons/nextjs.png",
-    id: 2,
-  },
-  {
-    tech: "Javascript",
-    img: "/icons/js.png",
-    id: 3,
-  },
-  {
-    tech: "Typescript",
-    img: "/icons/typescript.png",
-    id: 4,
-  },
-  {
-    tech: "Node.js",
-    img: "/icons/node-js.png",
-    id: 5,
-  },
-  {
-    tech: "Express.js",
-    img: "/icons/express.png",
-    id: 6,
-  },
-  {
-    tech: "MongoDB",
-    img: "/icons/mongodb.png",
-    id: 7,
-  },
-  {
-    tech: "PostgreSQL",
-    img: "/icons/postgre.png",
-    id: 8,
+    name: "Notes App",
+    description: "Note-taking application",
+    href: "https://notes-app-pedrodimarco.vercel.app/login",
   },
 ];
 
-export default function Home({ allPostsData }) {
+const technologies = [
+  { name: "React", icon: "/icons/react.png" },
+  { name: "Next.js", icon: "/icons/nextjs.png", darkIcon: true },
+  { name: "JavaScript", icon: "/icons/js.png" },
+  { name: "TypeScript", icon: "/icons/typescript.png" },
+  { name: "Node.js", icon: "/icons/node-js.png" },
+  { name: "Express.js", icon: "/icons/express.png", darkIcon: true },
+  { name: "MongoDB", icon: "/icons/mongodb.png" },
+  { name: "PostgreSQL", icon: "/icons/postgre.png" },
+];
+
+export default function Home() {
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Hi! My name is Pedro, I'm from Uruguay, and I'm a Web Developer.</p>
+      <section id="intro" className={styles.hero} aria-labelledby="intro-title">
+        <div className={`siteContainer ${styles.heroInner}`}>
+          <div>
+            <p className={styles.eyebrow}>Frontend-focused Full-Stack Developer</p>
+            <h1 id="intro-title">I build web applications from interface to API.</h1>
+            <p className={styles.lead}>
+              I’m Pedro, a frontend-focused full-stack developer with 3+ years
+              of experience building responsive web applications. I work with
+              React, TypeScript, and Node.js, connecting intuitive interfaces
+              with well-structured APIs.
+            </p>
+            <p className={styles.values}>
+              I value maintainable code, thoughtful architecture, and collaboration.
+            </p>
+            <div className={styles.heroActions}>
+              <a className={styles.primaryButton} href="#projects">
+                Explore my projects <span aria-hidden="true">↓</span>
+              </a>
+              <a className={styles.textLink} href="https://github.com/pedrodimarco">
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+          <figure className={styles.portrait}>
+            <Image
+              className={styles.portraitImage}
+              src="/images/me.jpeg"
+              width={226}
+              height={226}
+              alt="Pedro Di Marco"
+              priority
+            />
+            <span className={styles.portraitBracket} aria-hidden="true" />
+            <figcaption>
+              <span>Pedro Di Marco</span>
+              <span>Montevideo, Uruguay</span>
+            </figcaption>
+          </figure>
+        </div>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Tech stack</h2>
-        <ul className={homeStyles.techStackList}>
-          {techStack.map((element) => (
-            <li
-              className={`${utilStyles.listItem} ${utilStyles.listItemStack}`}
-              key={element.id}
-            >
-              <Image
-                src={element.img}
-                width={100}
-                height={100}
-                alt={element.name}
-              />
-              <p>{element.name}</p>
-            </li>
-          ))}
-        </ul>
+
+      <section id="projects" className={styles.projects} aria-labelledby="projects-title">
+        <div className="siteContainer">
+          <div className={styles.sectionHeading}>
+            <h2 id="projects-title">Projects</h2>
+            <span>Open a project ↗</span>
+          </div>
+          <div className={styles.projectList}>
+            {projects.map((project, index) => (
+              <article className={styles.project} key={project.name}>
+                <a
+                  className={styles.projectLink}
+                  href={project.href}
+                  aria-label={`Visit ${project.name} — ${project.description}`}
+                >
+                  <span className={styles.projectNumber} aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3>{project.name}</h3>
+                    <p>{project.description}</p>
+                  </div>
+                  <span className={styles.projectDestination}>
+                    <span className={styles.destinationLabel}>Visit website</span>
+                    <span className={styles.projectArrow} aria-hidden="true">↗</span>
+                  </span>
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Projects</h2>
-        <ul className={utilStyles.list}>
-          <li className={utilStyles.listItem}>
-            <Link href={`https://www.entrematesteconte.com`} target="_blank">
-              Entre mates te conté
-            </Link>
-            <br />
-            <small className={utilStyles.lightText}>Blog site</small>
-          </li>
-          <li className={utilStyles.listItem}>
-            <Link
-              href={`https://pedrodimarco.github.io/Workspace_inicial1/index.html`}
-              target="_blank"
-            >
-              e-Mercado
-            </Link>
-            <br />
-            <small className={utilStyles.lightText}>
-              "Jóvenes a Programar" project
-            </small>
-          </li>
-        </ul>
+
+      <section id="stack" className={styles.technologies} aria-labelledby="stack-title">
+        <div className={`siteContainer ${styles.techLayout}`}>
+          <div className={styles.techHeading}>
+            <h2 id="stack-title">My toolkit</h2>
+            <p>The technologies I work with.</p>
+          </div>
+          <ul className={styles.techList}>
+            {technologies.map(({ name, icon, darkIcon }) => (
+              <li key={name}>
+                <Image
+                  className={darkIcon ? styles.darkIcon : undefined}
+                  src={icon}
+                  width={21}
+                  height={21}
+                  alt=""
+                />
+                {name}
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
-      <Contact></Contact>
+
+      <Contact />
     </Layout>
   );
 }

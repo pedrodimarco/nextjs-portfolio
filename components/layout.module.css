@@ -1,15 +1,142 @@
-.container {
-    max-width: 36rem;
-    padding: 0 1rem;
-    margin: 3rem auto 6rem;
+.skipLink {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  z-index: 30;
+  padding: 12px 18px;
+  background: var(--fg);
+  color: var(--bg);
 }
 
-.header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.skipLink:focus {
+  top: 12px;
 }
 
-.backToHome {
-    margin: 3rem 0 0;
+.headerInner {
+  display: flex;
+  min-height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.brandMark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  letter-spacing: -0.08em;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navigation a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.navigation a:hover {
+  color: var(--fg);
+}
+
+.postMain {
+  max-width: 760px;
+  min-height: 65vh;
+  margin-inline: auto;
+  padding: 64px var(--gutter);
+}
+
+.postMain article a,
+.backHome a {
+  text-decoration: underline;
+}
+
+.postMain article h1 {
+  line-height: 1.1;
+}
+
+.postMain article p,
+.postMain article li {
+  color: var(--muted);
+}
+
+.backHome {
+  margin-top: 48px;
+}
+
+.footer {
+  padding-block: 10px 24px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.footer > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 16px;
+}
+
+.footer a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
+@media (max-width: 720px) {
+  .headerInner {
+    min-height: 68px;
+    padding-block: 10px;
+  }
+
+  .brand {
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .brandMark,
+  .stackLink {
+    display: none !important;
+  }
+
+  .navigation {
+    gap: 18px;
+  }
+
+  .navigation a {
+    font-size: 13px;
+  }
+
+  .postMain {
+    padding-block: 40px;
+  }
+
+  .footer {
+    padding-bottom: 16px;
+  }
 }

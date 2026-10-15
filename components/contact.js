@@ -1,24 +1,26 @@
-import Image from 'next/image'
-import styles from './contact.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
-
+import styles from "./contact.module.css";
 
 export default function Contact() {
-    return (
-        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${styles.container}`}>
-            <h2 className={utilStyles.headingLg}>Reach me out</h2>
-            <div className={styles.iconsContainer}>
-                <Link href={'mailto:pdimarco97@gmail.com'} target='_blank'>
-                    <Image width={40} height={40} src={'/icons/email.png'}></Image>
-                </Link>
-                <Link href={'https://www.linkedin.com/in/pedro-di-marco/'} target='_blank'>
-                    <Image width={40} height={40} src={'/icons/linkedin-1.png'}></Image>
-                </Link>
-                <Link href={'https://github.com/pedrodimarco'} target='_blank'>
-                    <Image width={40} height={40} src={'/icons/github-1.png'}></Image>
-                </Link>
-            </div>
-        </section>
-    )
+  return (
+    <section id="contact" className={styles.contact} aria-labelledby="contact-title">
+      <div className="siteContainer">
+        <div className={styles.inner}>
+          <div>
+            <h2 id="contact-title">Let&apos;s talk.</h2>
+            <a className={styles.email} href="mailto:pdimarco97@gmail.com">
+              pdimarco97@gmail.com <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <nav className={styles.socialLinks} aria-label="Social links">
+            <a href="https://www.linkedin.com/in/pedro-di-marco/">
+              LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+            <a href="https://github.com/pedrodimarco">
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </section>
+  );
 }
