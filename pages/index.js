@@ -14,6 +14,11 @@ const projects = [
     description: "Note-taking application",
     href: "https://notes-app-pedrodimarco.vercel.app/login",
   },
+  {
+    name: "Entre mates te conté",
+    description: "A Next.js blog about Uruguay’s agricultural community",
+    href: "https://entrematesteconte.com",
+  },
 ];
 
 const technologies = [
