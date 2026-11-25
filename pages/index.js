@@ -21,6 +21,21 @@ const projects = [
   },
 ];
 
+const ongoingProjects = [
+  {
+    name: "Falta uno",
+    description: "A full-stack web and mobile app to organize football, padel, and basketball meetups.",
+    stack: "TypeScript · Node.js · Express · PostgreSQL · React · React Native",
+    href: "https://github.com/pedrodimarco/falta-uno",
+  },
+  {
+    name: "SIENEP",
+    description: "An academic platform to support students with personalized educational needs. Currently focused on building the Next.js frontend to connect with the existing backend.",
+    stack: "Backend: Java · Spring Boot · PostgreSQL / Planned frontend: Next.js",
+    href: "https://github.com/pedrodimarco/sienep-backend",
+  },
+];
+
 const technologies = [
   { name: "React", icon: "/icons/react.png" },
   { name: "Next.js", icon: "/icons/nextjs.png", darkIcon: true },
@@ -42,12 +57,14 @@ export default function Home() {
             <h1 id="intro-title">I build web applications from interface to API.</h1>
             <p className={styles.lead}>
               I’m Pedro, a frontend-focused full-stack developer with 3+ years
-              of experience building responsive web applications. I work with
-              React, TypeScript, and Node.js, connecting intuitive interfaces
-              with well-structured APIs.
+              of professional experience building and maintaining web applications,
+              from enterprise e-commerce platforms to freelance projects. My
+              background is in JavaScript and TypeScript, and I currently build
+              with React, Next.js, and Node.js.
             </p>
             <p className={styles.values}>
-              I value maintainable code, thoughtful architecture, and collaboration.
+              Currently studying Information Technology at UTEC. Advanced English
+              (C1), with experience collaborating with international teams.
             </p>
             <div className={styles.heroActions}>
               <a className={styles.primaryButton} href="#projects">
@@ -82,29 +99,61 @@ export default function Home() {
             <h2 id="projects-title">Projects</h2>
             <span>Open a project ↗</span>
           </div>
-          <div className={styles.projectList}>
-            {projects.map((project, index) => (
-              <article className={styles.project} key={project.name}>
-                <a
-                  className={styles.projectLink}
-                  href={project.href}
-                  aria-label={`Visit ${project.name} — ${project.description}`}
-                >
-                  <span className={styles.projectNumber} aria-hidden="true">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3>{project.name}</h3>
-                    <p>{project.description}</p>
-                  </div>
-                  <span className={styles.projectDestination}>
-                    <span className={styles.destinationLabel}>Visit website</span>
-                    <span className={styles.projectArrow} aria-hidden="true">↗</span>
-                  </span>
-                </a>
-              </article>
-            ))}
-          </div>
+          <section className={styles.projectGroup} aria-labelledby="working-on-title">
+            <div className={styles.projectGroupHeading}>
+              <h3 id="working-on-title">Working on</h3>
+              <p>Here’s what I’m currently building.</p>
+            </div>
+            <div className={styles.projectList}>
+              {ongoingProjects.map((project, index) => (
+                <article className={styles.project} key={project.name}>
+                  <a className={styles.projectLink} href={project.href}
+                    aria-label={`View ${project.name} on GitHub`}>
+                    <span className={styles.projectNumber} aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h4>{project.name}</h4>
+                      <p>{project.description}</p>
+                      <p className={styles.projectStack}>{project.stack}</p>
+                    </div>
+                    <span className={styles.projectDestination}>
+                      <span className={styles.destinationLabel}>View on GitHub</span>
+                      <span className={styles.projectArrow} aria-hidden="true">↗</span>
+                    </span>
+                  </a>
+                </article>
+              ))}
+            </div>
+          </section>
+          <section className={styles.projectGroup} aria-labelledby="previous-projects-title">
+            <div className={styles.projectGroupHeading}>
+              <h3 id="previous-projects-title">Previous projects</h3>
+            </div>
+            <div className={styles.projectList}>
+              {projects.map((project, index) => (
+                <article className={styles.project} key={project.name}>
+                  <a
+                    className={styles.projectLink}
+                    href={project.href}
+                    aria-label={`Visit ${project.name} — ${project.description}`}
+                  >
+                    <span className={styles.projectNumber} aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h4>{project.name}</h4>
+                      <p>{project.description}</p>
+                    </div>
+                    <span className={styles.projectDestination}>
+                      <span className={styles.destinationLabel}>Visit website</span>
+                      <span className={styles.projectArrow} aria-hidden="true">↗</span>
+                    </span>
+                  </a>
+                </article>
+              ))}
+            </div>
+          </section>
         </div>
       </section>
 

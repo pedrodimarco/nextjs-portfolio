@@ -114,7 +114,7 @@
 }
 
 .projects {
-  padding-block: 16px 44px;
+  padding-block: 32px 64px;
 }
 
 .sectionHeading {
@@ -122,12 +122,12 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
 .sectionHeading h2 {
   margin: 0;
-  font-size: 22px;
+  font-size: 30px;
   line-height: 1.3;
   letter-spacing: -0.035em;
 }
@@ -141,6 +141,37 @@
 
 .projectList {
   border-top: 1px solid var(--border);
+}
+
+.projectGroup + .projectGroup {
+  margin-top: 44px;
+}
+
+.projectGroupHeading {
+  margin-bottom: 16px;
+}
+
+.projectGroupHeading h3 {
+  margin: 0;
+  color: var(--muted);
+  font: 500 12px/1.5 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.projectGroup:first-of-type .projectGroupHeading h3 {
+  color: var(--accent);
+}
+
+.projectGroupHeading p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.projectLink .projectStack {
+  margin-top: 12px;
+  font: 11px/1.6 var(--font-mono);
 }
 
 .project {
@@ -159,7 +190,8 @@
   text-decoration: none;
 }
 
-.projectLink:hover h3 {
+.projectLink:hover h3,
+.projectLink:hover h4 {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 8px;
@@ -171,19 +203,21 @@
 
 .projectNumber {
   align-self: start;
-  padding-top: 8px;
+  padding-top: 4px;
   color: var(--muted);
   font: 12px var(--font-mono);
 }
 
-.projectLink h3 {
+.projectLink h3,
+.projectLink h4 {
   margin: 0;
-  font-size: clamp(25px, 3vw, 36px);
+  font-size: clamp(22px, 2.4vw, 26px);
   line-height: 1.2;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.035em;
 }
 
 .projectLink p {
+  max-width: 68ch;
   margin: 8px 0 0;
   color: var(--muted);
   font-size: 14px;
@@ -226,7 +260,7 @@
 
 .techHeading h2 {
   margin: 0 0 10px;
-  font-size: 22px;
+  font-size: 30px;
   line-height: 1.3;
   letter-spacing: -0.035em;
 }
@@ -380,16 +414,16 @@
   }
 
   .projects {
-    padding-block: 8px 34px;
+    padding-block: 24px 44px;
   }
 
   .sectionHeading {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
   }
 
   .sectionHeading h2,
   .techHeading h2 {
-    font-size: 21px;
+    font-size: 26px;
   }
 
   .sectionHeading > span {
@@ -407,13 +441,14 @@
     font-size: 10px;
   }
 
-  .projectLink h3 {
-    font-size: 25px;
+  .projectLink h3,
+  .projectLink h4 {
+    font-size: 22px;
   }
 
   .projectLink p {
     margin-top: 7px;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .destinationLabel {
