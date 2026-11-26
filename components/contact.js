@@ -12,10 +12,10 @@ export default function Contact() {
             </a>
           </div>
           <nav className={styles.socialLinks} aria-label="Social links">
-            <a href="https://www.linkedin.com/in/pedro-di-marco/">
+            <a href="https://www.linkedin.com/in/pedro-di-marco/" target="_blank" rel="noopener noreferrer">
               LinkedIn <span aria-hidden="true">↗</span>
             </a>
-            <a href="https://github.com/pedrodimarco">
+            <a href="https://github.com/pedrodimarco" target="_blank" rel="noopener noreferrer">
               GitHub <span aria-hidden="true">↗</span>
             </a>
           </nav>

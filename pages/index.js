@@ -70,7 +70,8 @@ export default function Home() {
               <a className={styles.primaryButton} href="#projects">
                 Explore my projects <span aria-hidden="true">↓</span>
               </a>
-              <a className={styles.textLink} href="https://github.com/pedrodimarco">
+              <a className={styles.textLink} href="https://github.com/pedrodimarco"
+                target="_blank" rel="noopener noreferrer">
                 GitHub <span aria-hidden="true">↗</span>
               </a>
             </div>
@@ -108,6 +109,7 @@ export default function Home() {
               {ongoingProjects.map((project, index) => (
                 <article className={styles.project} key={project.name}>
                   <a className={styles.projectLink} href={project.href}
+                    target="_blank" rel="noopener noreferrer"
                     aria-label={`View ${project.name} on GitHub`}>
                     <span className={styles.projectNumber} aria-hidden="true">
                       {String(index + 1).padStart(2, "0")}
@@ -136,6 +138,8 @@ export default function Home() {
                   <a
                     className={styles.projectLink}
                     href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={`Visit ${project.name} — ${project.description}`}
                   >
                     <span className={styles.projectNumber} aria-hidden="true">
