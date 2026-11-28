@@ -10,6 +10,12 @@ const projects = [
     href: "https://ranchoforestal.uy",
   },
   {
+    name: "URL Shortener",
+    description: "URL shortener with click tracking, built with Express, MongoDB, and Nano ID",
+    href: "https://url-shortener-n95y.onrender.com/",
+    repository: "https://github.com/pedrodimarco/url-shortener",
+  },
+  {
     name: "Notes App",
     description: "Note-taking application",
     href: "https://notes-app-pedrodimarco.vercel.app/login",
@@ -134,7 +140,10 @@ export default function Home() {
             </div>
             <div className={styles.projectList}>
               {projects.map((project, index) => (
-                <article className={styles.project} key={project.name}>
+                <article
+                  className={project.repository ? `${styles.project} ${styles.projectWithRepository}` : styles.project}
+                  key={project.name}
+                >
                   <a
                     className={styles.projectLink}
                     href={project.href}
@@ -154,6 +163,17 @@ export default function Home() {
                       <span className={styles.projectArrow} aria-hidden="true">↗</span>
                     </span>
                   </a>
+                  {project.repository && (
+                    <a
+                      className={styles.projectRepository}
+                      href={project.repository}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.name} source on GitHub`}
+                    >
+                      Source on GitHub <span aria-hidden="true">↗</span>
+                    </a>
+                  )}
                 </article>
               ))}
             </div>

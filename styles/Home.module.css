@@ -190,6 +190,25 @@
   text-decoration: none;
 }
 
+.projectWithRepository .projectLink {
+  padding-bottom: 8px;
+}
+
+.projectRepository {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 20px 74px;
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.projectRepository:hover {
+  color: var(--fg);
+}
+
 .projectLink:hover h3,
 .projectLink:hover h4 {
   text-decoration: underline;
@@ -439,6 +458,11 @@
   .projectNumber {
     padding-top: 5px;
     font-size: 10px;
+  }
+
+  .projectRepository {
+    min-height: 44px;
+    margin: 0 0 14px 34px;
   }
 
   .projectLink h3,
