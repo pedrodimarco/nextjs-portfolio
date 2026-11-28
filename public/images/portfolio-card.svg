@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#161d28"/>
+  <g font-family="Arial, sans-serif">
+    <rect x="64" y="52" width="56" height="56" rx="12" fill="#1d2635" stroke="#3b4657"/>
+    <text x="77" y="89" fill="#c5ef47" font-size="27" font-weight="700" letter-spacing="-2">pd.</text>
+    <text x="140" y="86" fill="#bac3d1" font-family="DejaVu Sans Mono, monospace" font-size="16" letter-spacing="2">PERSONAL PORTFOLIO</text>
+    <text x="1136" y="86" text-anchor="end" fill="#bac3d1" font-family="DejaVu Sans Mono, monospace" font-size="14">MONTEVIDEO, URUGUAY</text>
+
+    <text x="60" y="242" fill="#f3f6fa" font-size="78" font-weight="700" letter-spacing="-3.5">Pedro Di Marco</text>
+    <text x="64" y="306" fill="#c5ef47" font-size="31">Software Engineer</text>
+    <text x="64" y="382" fill="#bac3d1" font-size="26">I design and build software products,</text>
+    <text x="64" y="420" fill="#bac3d1" font-size="26">from idea to launch.</text>
+
+    <g transform="translate(846 179)">
+      <rect width="290" height="260" rx="18" fill="#1d2635" stroke="#3b4657"/>
+      <path d="M0 44H290" stroke="#3b4657"/>
+      <circle cx="23" cy="23" r="4" fill="#c5ef47"/>
+      <circle cx="39" cy="23" r="4" fill="#657185"/>
+      <circle cx="55" cy="23" r="4" fill="#657185"/>
+      <rect x="28" y="74" width="234" height="54" rx="8" fill="#161d28"/>
+      <text x="47" y="109" fill="#f3f6fa" font-family="DejaVu Sans Mono, monospace" font-size="24">&lt;interface /&gt;</text>
+      <path d="M145 141V169M138 162L145 169L152 162" fill="none" stroke="#c5ef47" stroke-width="2"/>
+      <rect x="28" y="185" width="234" height="46" rx="8" fill="#161d28" stroke="#3b4657"/>
+      <text x="47" y="215" fill="#c5ef47" font-family="DejaVu Sans Mono, monospace" font-size="20">{ API }</text>
+      <circle cx="238" cy="208" r="4" fill="#c5ef47"/>
+    </g>
+
+    <path d="M64 488H1136" stroke="#3b4657"/>
+    <text x="64" y="553" fill="#f3f6fa" font-size="30" font-weight="700" letter-spacing="-.5">pedrodimarco.dev</text>
+    <path d="M338 546L354 530M340 530H354V544" fill="none" stroke="#c5ef47" stroke-width="2.5"/>
+    <text x="1136" y="550" text-anchor="end" fill="#bac3d1" font-family="DejaVu Sans Mono, monospace" font-size="18">React / Next.js / TypeScript / Node.js</text>
+  </g>
+</svg>

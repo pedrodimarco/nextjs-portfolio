@@ -59,10 +59,10 @@ export default function Home() {
       <section id="intro" className={styles.hero} aria-labelledby="intro-title">
         <div className={`siteContainer ${styles.heroInner}`}>
           <div>
-            <p className={styles.eyebrow}>Frontend-focused Full-Stack Developer</p>
-            <h1 id="intro-title">I build web applications from interface to API.</h1>
+            <p className={styles.eyebrow}>Software Engineer</p>
+            <h1 id="intro-title">I design and build software products, from idea to launch.</h1>
             <p className={styles.lead}>
-              I’m Pedro, a frontend-focused full-stack developer with 3+ years
+              I’m Pedro, a software engineer with 3+ years
               of professional experience building and maintaining web applications,
               from enterprise e-commerce platforms to freelance projects. My
               background is in JavaScript and TypeScript, and I currently build

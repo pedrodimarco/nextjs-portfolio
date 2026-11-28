@@ -2,9 +2,9 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "./layout.module.css";
 
-export const siteTitle = "Pedro Di Marco — Frontend-focused Full-Stack Developer";
+export const siteTitle = "Pedro Di Marco — Software Engineer";
 const siteUrl = "https://pedrodimarco.dev";
-const siteDescription = "Pedro Di Marco, frontend-focused full-stack developer in Montevideo, Uruguay. Building web applications with React, Next.js, TypeScript, and Node.js.";
+const siteDescription = "Pedro Di Marco, software engineer in Montevideo, Uruguay. Building web applications with React, Next.js, TypeScript, and Node.js.";
 
 export default function Layout({
   children,
@@ -16,7 +16,8 @@ export default function Layout({
 }) {
   const sectionPrefix = home ? "" : "/";
   const canonicalUrl = canonicalPath ? new URL(canonicalPath, siteUrl).href : null;
-  const imageUrl = `${siteUrl}/images/me.jpeg`;
+  const imageUrl = `${siteUrl}/images/portfolio-card.png`;
+  const imageAlt = "Pedro Di Marco — Software Engineer. pedrodimarco.dev";
 
   return (
     <>
@@ -38,14 +39,14 @@ export default function Layout({
         <meta property="og:site_name" content="Pedro Di Marco" />
         {canonicalUrl && <meta property="og:url" content={canonicalUrl} key="og:url" />}
         <meta property="og:image" content={imageUrl} />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="800" />
-        <meta property="og:image:alt" content="Pedro Di Marco" />
-        <meta name="twitter:card" content="summary" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={imageAlt} />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} key="twitter:title" />
         <meta name="twitter:description" content={description} key="twitter:description" />
         <meta name="twitter:image" content={imageUrl} />
-        <meta name="twitter:image:alt" content="Pedro Di Marco" />
+        <meta name="twitter:image:alt" content={imageAlt} />
         <title>{title}</title>
       </Head>
 
